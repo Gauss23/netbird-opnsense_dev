@@ -2,8 +2,8 @@
 
     $(document).ready(function () {
 
-        $("#netbird\\.initial\\.initshure").click(function () {
-            if ($("#netbird\\.initial\\.initshure").prop('checked')) {
+        $("#netbird\\.initial\\.initsure").click(function () {
+            if ($("#netbird\\.initial\\.initsure").prop('checked')) {
                 $("#initialAct").prop('disabled', false);
             } else {
                 $("#initialAct").prop('disabled', true);

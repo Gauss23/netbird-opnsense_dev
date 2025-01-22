@@ -154,7 +154,7 @@ class ServiceController extends ApiMutableServiceControllerBase
             $mdlInitial->initial->hostname = $hostname;
         }
         $mdlInitial->initial->setupkey = "00000000-0000-0000-0000-000000000000";
-        $mdlInitial->initial->initshure = 0;
+        $mdlInitial->initial->initsure = 0;
 
         $mdlInitial->serializeToConfig();
         $cnf = Config::getInstance();
@@ -189,6 +189,7 @@ class ServiceController extends ApiMutableServiceControllerBase
                 $carpEnabled = $mdlNetbird->general->CarpIf->__toString() != '';
                 $disableClientRoutes = $mdlNetbird->general->DisableClientRoutes->__toString() == 1;
                 $disableServerRoutes = $mdlNetbird->general->DisableServerRoutes->__toString() == 1;
+                $disableDNS = $mdlNetbird->general->DisableDNS->__toString() == 1;
                 $rpEnabled = $mdlNetbird->general->QuantumEnabled->__toString() == 1;
                 $rpPermissive = $mdlNetbird->general->QuantumPermissive->__toString() == 1;
                 $wgPort = $mdlNetbird->general->WgPort->__toString();
@@ -197,6 +198,7 @@ class ServiceController extends ApiMutableServiceControllerBase
                 $netbirdConfig["DisableAutoConnect"] = $carpEnabled;
                 $netbirdConfig["DisableClientRoutes"] = $disableClientRoutes;
                 $netbirdConfig["DisableServerRoutes"] = $disableServerRoutes;
+                $netbirdConfig["DisableDNS"] = $disableDNS;
                 $netbirdConfig["RosenpassEnabled"] = $rpEnabled;
                 $netbirdConfig["RosenpassPermissive"] = $rpPermissive;
                 $netbirdConfig["WgPort"] = intval($wgPort);

@@ -10,13 +10,4 @@
  		Platform:           runtime.GOARCH,
 - 		OS:                 osName,
 + 		OS:                 strings.Replace(osName, "FreeBSD", "FakeBSD", -1),
---- client/internal/dns/server_unix.go
-+++ client/internal/dns/server_unix.go
-@@ -3,5 +3,5 @@
- package dns
- 
- func (s *DefaultServer) initialize() (manager hostManager, err error) {
--       return newHostManager(s.wgInterface.Name())
-+       return newNoopHostMocker(), nil
- }
- 
+

@@ -25,10 +25,10 @@
                 <ZoneRootAllowed>N</ZoneRootAllowed>
                 <ValidationMessage>Please specify a valid hostname.</ValidationMessage>
             </hostname>
-            <initshure type="BooleanField">
+            <initsure type="BooleanField">
                 <default>0</default>
                 <Required>Y</Required>
-            </initshure>
+            </initsure>
         </initial>
     </items>
 </model>
